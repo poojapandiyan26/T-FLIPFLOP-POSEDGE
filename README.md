@@ -2,7 +2,7 @@
 
 **AIM:**
 
-To implement  T flipflop using verilog and validating their functionality using their functional tables
+To implement  T flipflop using Verilog and validating their functionality using their functional tables
 
 **SOFTWARE REQUIRED:**
 
@@ -17,7 +17,7 @@ T flip-flop is the simplified version of JK flip-flop. It is obtained by connect
 ![image](https://github.com/naavaneetha/T-FLIPFLOP-POSEDGE/assets/154305477/458a68fe-2d08-4a9d-ac4f-7ae0480ce0bd)
 
  
-This circuit has single input T and two outputs Qtt & Qtt’. The operation of T flip-flop is same as that of JK flip-flop. Here, we considered the inputs of JK flip-flop as J = T and K = T in order to utilize the modified JK flip-flop for 2 combinations of inputs. So, we eliminated the other two combinations of J & K, for which those two values are complement to each other in T flip-flop. The following table shows the state table of T flip-flop.
+This circuit has single input T and two outputs Qtt & Qtt’. The operation of T flip-flop is the same as that of JK flip-flop. Here, we considered the inputs of JK flip-flop as J = T and K = T in order to utilize the modified JK flip-flop for 2 combinations of inputs. So, we eliminated the other two combinations of J & K, for which those two values are complement to each other in T flip-flop. The following table shows the state table of T flip-flop.
 
 Here, Qtt & Qt+1t+1 are present state & next state respectively. So, T flip-flop can be used for one of these two functions such as Hold, & Complement of present state based on the input conditions, when positive transition of clock signal is applied. The following table shows the characteristic table of T flip-flop. Inputs Present State Next State
 
@@ -28,15 +28,36 @@ From the above characteristic table, we can directly write the next state equati
 
 **Procedure**
 
-/* write all the steps invloved */
+1. Type the program in Quartus software.
+
+2. Compile and run the program.
+
+3. Generate the RTL schematic and save the logic diagram.
+
+4. Create nodes for inputs and outputs to generate the timing diagram.
+
+5. For different input combinations generate the timing diagram.
 
 **PROGRAM**
 
-/* Program for flipflops and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
-*/
-
+Program for flip-flops and verify its truth table in quartus using Verilog programming.
+### Developed by: POOJA SRI P M B RegisterNumber: 24007629
+```
+module dj(q,qbar,t,clk);
+input t,clk;
+output q,qbar;
+wire w1,w2;
+nand(w1,t,qbar);
+nand(w2,t,q);
+nand(q,w1,qbar);
+nand(qbar,q,w2);
+endmodule
+``` 
 **RTL LOGIC FOR FLIPFLOPS**
+![WhatsApp Image 2024-10-24 at 11 45 07_049fc595](https://github.com/user-attachments/assets/92f896c1-9ae8-4c2c-af5d-44081ca77bed)
 
-**TIMING DIGRAMS FOR FLIP FLOPS**
+**TIMING DIAGRAMS FOR FLIP FLOPS**
+![WhatsApp Image 2024-10-24 at 11 48 06_8b149d1e](https://github.com/user-attachments/assets/348317a9-9e51-46ab-b68d-2117a6041e22)
 
 **RESULTS**
+implementation of T flipflop using Verilog is successful
